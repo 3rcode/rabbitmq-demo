@@ -1,8 +1,8 @@
 const amqp = require('amqplib/callback_api');
 
-const io = require('socket.io')(4000, {
+const io = require('socket.io')(5001, {
   cors: {
-    origin: "http://127.0.0.1:5500"
+    origin: "http://localhost:3000"
   }
 });
 
@@ -14,7 +14,7 @@ var notify = true;
 io.on("connection", socket => {
   socket.on("notify", (data) => {
     var {customerLongtitude, customerLatitude} = data
-    amqp.connect('amqp://localhost', function (error0, connection) {
+    amqp.connect('amqp://guest:guest@rabbitmq:5672/', function (error0, connection) {
       if (error0) {
         throw error0;
       }

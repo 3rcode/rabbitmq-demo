@@ -1,14 +1,14 @@
 const amqp = require('amqplib/callback_api');
 
-const io = require('socket.io')(3000, {
+const io = require('socket.io')(5000, {
   cors: {
-    origin: "http://127.0.0.1:5500"
+    origin: "http://localhost:3000"
   }
 });
 
 io.on("connection", socket => {
   socket.on("render", (data) => {
-    amqp.connect('amqp://localhost', function (error0, connection) {
+    amqp.connect('amqp://guest:guest@rabbitmq:5672/', function (error0, connection) {
       if (error0) {
         throw error0;
       }

@@ -1,18 +1,15 @@
 {
-  "name": "server",
+  "name": "services",
   "version": "1.0.0",
   "description": "",
-  "main": "noti.js",
+  "main": "shipper.js",
   "scripts": {
-    "devStart": "nodemon render.js"
+    "start": "node render & node notify & node shipper"
   },
-  "keywords": [],
-  "author": "",
+  "author": "lvdthieu",
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.10.3",
-    "axios": "^1.6.1",
-    "nodemon": "^3.0.1",
     "socket.io": "^4.7.2"
   }
 }
