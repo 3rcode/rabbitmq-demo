@@ -13,24 +13,27 @@ Here is an image describe architecture of my demo:
 * Notify service get messages from notify queue, process message and send data to user app client wheneven shipper have reached certain distance to user.
 
 # Installation
-
-## Using docker 
+## Initiate
+### Using docker 
 ```
 git clone https://github.com/lvdthieu/rabbitmq-demo.git
 cd rabbitmq-demo/my-app
+npm init -y
 npm install
 npm start
 cd ..
 docker compose up
 ```
 
-## Normal install
+### Normal install
 
 * Step 1: Install rabbitmq-server (and make sure it running)
 * Step 2: Clone repository
 * Step 3: Modify 3 files (notify.js, render.js, shipper.js): ```amqp://guest:guest@rabbitmq:5672/``` => ```amqp://localhost```
-* Step 4: Install packages in my-app and services folder by using ```npm install```
+* Step 4: Install packages in my-app and services folder by using ```npm init -y``` and then ```npm install```
 * Step 5: Run command ```npm start``` in two folders my-app and services
+## Usage
+Open web browser at ```localhost:3000``` to see result 
 
 # Notes
 
